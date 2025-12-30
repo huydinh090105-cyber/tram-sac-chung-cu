@@ -3,233 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đề Án Trạm Sạc Xe Điện An Toàn - Chung Cư</title>
+    <title>Đề Án: Chặn Đứng Nguy Cơ Cháy Nổ Chung Cư</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .gradient-bg {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
-        .step-line::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #e5e7eb;
-            transform: translateX(-50%);
-            z-index: -1;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <i class="fa-solid fa-charging-station text-emerald-600 text-2xl"></i>
-                    <span class="font-bold text-xl tracking-tight text-gray-900">EV Station<span class="text-emerald-600">Safe</span></span>
+                    <i class="fa-solid fa-shield-halved text-red-600 text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Safety<span class="text-red-600">First</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#problem" class="text-gray-600 hover:text-emerald-600 font-medium transition">Vấn đề</a>
+                    <a href="#urgent" class="text-red-600 hover:text-red-800 font-bold transition">Báo Động</a>
                     <a href="#solution" class="text-gray-600 hover:text-emerald-600 font-medium transition">Giải pháp</a>
                     <a href="#cost" class="text-gray-600 hover:text-emerald-600 font-medium transition">Chi phí</a>
                     <a href="#legal" class="text-gray-600 hover:text-emerald-600 font-medium transition">Pháp lý</a>
                 </div>
-                <button onclick="document.getElementById('voteModal').classList.remove('hidden')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full font-medium transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                    Ủng hộ Dự án
+                <button onclick="document.getElementById('voteModal').classList.remove('hidden')" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full font-medium transition shadow-lg hover:shadow-xl">
+                    Đồng ý Kiến nghị
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-10 pattern-dots"></div>
+    <!-- Hero Section: Updated for higher urgency -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto">
-                <div class="inline-flex items-center px-3 py-1 rounded-full bg-red-100 text-red-600 text-sm font-semibold mb-6 animate-pulse">
-                    <i class="fa-solid fa-triangle-exclamation mr-2"></i> An toàn PCCC là trên hết
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-red-50 text-red-700 text-sm font-bold mb-6 border border-red-200 animate-bounce">
+                    <i class="fa-solid fa-bell mr-2"></i> THỰC TRẠNG ĐÁNG BÁO ĐỘNG TẠI TÒA NHÀ
                 </div>
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Di Dời Trạm Sạc Ra Sân Chung <br>
-                    <span class="text-emerald-600">Vì Sự Bình Yên Của Cư Dân</span>
+                    Ngưng Đưa "Bom Nổ Chậm"<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-500">Vào Thang Máy & Căn Hộ</span>
                 </h1>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                    Đề xuất xây dựng khu vực sạc xe điện chuyên biệt: <strong>An toàn hơn - Văn minh hơn - Tiết kiệm hơn</strong>. Giải pháp loại bỏ "bom nổ chậm" khỏi tầng hầm chung cư.
+                <p class="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Việc cấm xe điện dưới hầm mà <strong>không có chỗ sạc thay thế</strong> đang buộc cư dân phải mang xe lên nhà. Hành động này nguy hiểm gấp 10 lần so với để dưới hầm.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#solution" class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-emerald-700 transition flex items-center justify-center gap-2">
-                        Xem chi tiết giải pháp <i class="fa-solid fa-arrow-down"></i>
+                    <a href="#urgent" class="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-red-700 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i> Tại sao nguy hiểm?
                     </a>
-                    <a href="#cost" class="bg-white text-gray-700 border border-gray-300 px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-50 transition flex items-center justify-center gap-2">
-                        Xem dự toán <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <a href="#solution" class="bg-white text-gray-700 border-2 border-emerald-500 px-8 py-4 rounded-lg font-bold text-lg hover:bg-emerald-50 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-leaf"></i> Xem giải pháp Xanh
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section id="problem" class="py-20 bg-white">
+    <!-- Problem Section: The Specific Risk Analysis -->
+    <section id="urgent" class="py-20 bg-red-50 relative">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Tại sao chúng ta cần làm ngay?</h2>
-                <p class="text-lg text-gray-600">Sạc xe điện trong hầm kín tiềm ẩn những rủi ro không thể lường trước.</p>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Cấm Dưới Hầm, Nhưng... <br>Rủi Ro Đang Ở Ngay Cửa Nhà Bạn</h2>
+                <p class="text-lg text-gray-600">Khi không có trạm sạc sân chung, rủi ro đã chuyển từ tầng hầm lên khu vực sinh hoạt.</p>
             </div>
+            
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-red-50 p-8 rounded-2xl border border-red-100 hover:shadow-lg transition">
-                    <div class="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center mb-6 text-red-600 text-2xl">
-                        <i class="fa-solid fa-fire"></i>
+                <!-- Risk 1: Elevator -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-red-600 relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-10 -translate-y-10">
+                        <i class="fa-solid fa-elevator text-9xl text-red-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Rủi ro Hỏa hoạn & Khói độc</h3>
-                    <p class="text-gray-600">Khi pin Lithium cháy trong không gian kín (tầng hầm), nhiệt độ tăng cực nhanh, sinh ra lượng khói độc khổng lồ bao trùm lối thoát hiểm, đe dọa trực tiếp tính mạng cư dân tầng trên.</p>
-                </div>
-                <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition">
-                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-blue-600 text-2xl">
-                        <i class="fa-solid fa-gavel"></i>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6 text-red-600 text-3xl">
+                            <i class="fa-solid fa-people-arrows"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Bẫy Tử Thần Trong Thang Máy</h3>
+                        <p class="text-gray-600 mb-4">Pin xe điện khi cháy trong không gian kín như thang máy sẽ gây tử vong ngay lập tức vì khói độc và nhiệt độ cao. Không có đường thoát.</p>
+                        <ul class="text-sm text-red-700 font-semibold space-y-2">
+                            <li><i class="fa-solid fa-xmark mr-2"></i>Không lối thoát hiểm</li>
+                            <li><i class="fa-solid fa-xmark mr-2"></i>Hỏng trục giao thông của tòa nhà</li>
+                        </ul>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Trách nhiệm Pháp lý</h3>
-                    <p class="text-gray-600">Nếu xảy ra sự cố nghiêm trọng, Ban Quản Trị và Ban Quản Lý sẽ chịu trách nhiệm liên đới rất lớn trước pháp luật. Việc chủ động phòng ngừa là trách nhiệm bắt buộc.</p>
                 </div>
+
+                <!-- Risk 2: Apartment -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-l-4 border-orange-500 relative overflow-hidden group">
+                    <div class="absolute right-0 top-0 opacity-10 transform translate-x-10 -translate-y-10">
+                        <i class="fa-solid fa-house-chimney-crack text-9xl text-orange-500"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 text-orange-600 text-3xl">
+                            <i class="fa-solid fa-bed"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Mang Lửa Vào Giường Ngủ</h3>
+                        <p class="text-gray-600 mb-4">Căn hộ chứa đầy vật liệu dễ cháy (rèm, đệm, gỗ). Khi sạc qua đêm không kiểm soát, nếu cháy xảy ra ở tầng cao, công tác cứu hộ cực kỳ khó khăn.</p>
+                        <ul class="text-sm text-orange-700 font-semibold space-y-2">
+                            <li><i class="fa-solid fa-xmark mr-2"></i>Khói lan nhanh ra hành lang</li>
+                            <li><i class="fa-solid fa-xmark mr-2"></i>Hệ thống điện nhà không chịu tải nổi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Callout -->
+            <div class="mt-12 p-6 bg-red-100 rounded-xl text-center border border-red-200">
+                <p class="text-red-800 font-bold text-lg">
+                    <i class="fa-solid fa-circle-exclamation mr-2"></i>
+                    "Chúng ta không thể chỉ CẤM (dưới hầm) mà không CẤP (chỗ sạc an toàn). Điều đó đồng nghĩa với việc đẩy cư dân vào thế phải làm sai."
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section (Core) -->
-    <section id="solution" class="py-20 bg-gray-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-emerald-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Giải Pháp Kỹ Thuật: <span class="text-emerald-400">3 Lớp Bảo Vệ</span></h2>
-                <p class="text-gray-400 text-lg">Tiêu chuẩn công nghiệp - An toàn gấp nhiều lần so với sạc tự phát.</p>
+                <h2 class="text-3xl font-bold mb-4">Giải Pháp Duy Nhất: <span class="text-emerald-400">Trạm Sạc Sân Chung</span></h2>
+                <p class="text-gray-400">Đưa nguồn nguy hiểm ra khỏi khu vực sinh sống.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Layer 1 -->
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-emerald-500 transition group">
-                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition duration-300">
-                        <i class="fa-solid fa-bolt text-2xl text-emerald-400 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">1. Chống Quá Tải</h3>
-                    <ul class="text-gray-300 space-y-2 text-sm">
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Tủ điện tổng MCCB bảo vệ toàn mạch.</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Aptomat riêng cho từng nhánh sạc.</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Dây dẫn chuẩn Cadivi chịu tải cao.</li>
-                    </ul>
+                <!-- Feature 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-emerald-500 transition">
+                    <i class="fa-solid fa-cloud-sun text-4xl text-emerald-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Không gian thoáng khí</h3>
+                    <p class="text-gray-400 text-sm">Nếu có sự cố, khói độc bay lên trời, không tụ trong nhà hay thang máy.</p>
                 </div>
-
-                <!-- Layer 2 -->
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-emerald-500 transition group transform md:-translate-y-4 shadow-xl">
-                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition duration-300">
-                        <i class="fa-solid fa-user-shield text-2xl text-emerald-400 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">2. An Toàn Điện (Chống Giật)</h3>
-                    <ul class="text-gray-300 space-y-2 text-sm">
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i><strong>RCBO 30mA:</strong> Tự ngắt ngay khi rò điện.</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Hệ thống tiếp địa riêng (< 10 Ohm).</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Ổ cắm chuẩn công nghiệp IP54 (Chống nước).</li>
-                    </ul>
+                 <!-- Feature 2 -->
+                 <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-emerald-500 transition">
+                    <i class="fa-solid fa-shield-cat text-4xl text-emerald-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Cách ly nguồn cháy</h3>
+                    <p class="text-gray-400 text-sm">Vị trí sạc cách xa khu nhà ở. Cháy xe không lan sang căn hộ.</p>
                 </div>
-
-                <!-- Layer 3 -->
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-emerald-500 transition group">
-                    <div class="w-16 h-16 bg-gray-700 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-emerald-600 transition duration-300">
-                        <i class="fa-solid fa-fire-extinguisher text-2xl text-emerald-400 group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4">3. PCCC Chủ Động</h3>
-                    <ul class="text-gray-300 space-y-2 text-sm">
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i><strong>Bóng AFO tự nổ:</strong> Dập lửa tự động.</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Cách ly nguồn cháy khỏi khu dân cư.</li>
-                        <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i>Camera giám sát 24/7.</li>
-                    </ul>
+                 <!-- Feature 3 -->
+                 <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-emerald-500 transition">
+                    <i class="fa-solid fa-robot text-4xl text-emerald-400 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Công nghệ giám sát</h3>
+                    <p class="text-gray-400 text-sm">Tự ngắt khi đầy, bóng chữa cháy tự động. An toàn 24/7.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cost Section -->
-    <section id="cost" class="py-20 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Dự Toán & Nguồn Vốn</h2>
-                <p class="text-gray-600">Minh bạch, tiết kiệm và hiệu quả cho quy mô 10 xe (Có thể mở rộng).</p>
+    <!-- Cost Table (Simplified) -->
+    <section id="cost" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-8">Khái Toán Chi Phí Đầu Tư</h2>
+            <div class="overflow-x-auto bg-white shadow-lg rounded-lg border">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-gray-100 text-gray-700 font-bold">
+                        <tr>
+                            <th class="p-4 border-b">Hạng mục</th>
+                            <th class="p-4 border-b text-right">Chi phí (VNĐ)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="p-4 border-b">Hạ tầng điện & An toàn (Tủ, Dây, RCBO, Tiếp địa)</td>
+                            <td class="p-4 border-b text-right">12.500.000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b">Hệ thống PCCC tự động (Bóng AFO, Camera)</td>
+                            <td class="p-4 border-b text-right">2.500.000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b">Mái che & Nền bãi (Kết cấu thép lắp ghép)</td>
+                            <td class="p-4 border-b text-right">8.000.000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b">Dự phòng & Lắp đặt</td>
+                            <td class="p-4 border-b text-right">3.000.000</td>
+                        </tr>
+                        <tr class="bg-emerald-50 font-bold text-emerald-800">
+                            <td class="p-4">TỔNG CỘNG (Dự kiến cho 10 xe)</td>
+                            <td class="p-4 text-right">~ 26.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12 border border-gray-200">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-bold">
-                            <tr>
-                                <th class="px-6 py-4">Hạng mục</th>
-                                <th class="px-6 py-4">Chi tiết</th>
-                                <th class="px-6 py-4 text-right">Thành tiền (VNĐ)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr>
-                                <td class="px-6 py-4 font-medium">1. Hệ thống Điện & An toàn</td>
-                                <td class="px-6 py-4 text-gray-500">Tủ điện, RCBO chống giật, Dây dẫn, Tiếp địa, Chống sét</td>
-                                <td class="px-6 py-4 text-right">12.500.000</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-medium">2. Hệ thống PCCC & Giám sát</td>
-                                <td class="px-6 py-4 text-gray-500">Bóng cứu hỏa AFO, Camera, Biển báo</td>
-                                <td class="px-6 py-4 text-right">2.500.000</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-medium">3. Kết cấu Mái & Nền</td>
-                                <td class="px-6 py-4 text-gray-500">Khung thép, mái tôn cách nhiệt, cải tạo nền</td>
-                                <td class="px-6 py-4 text-right">8.000.000</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 font-medium">4. Dự phòng & Nhân công</td>
-                                <td class="px-6 py-4 text-gray-500">Vận chuyển, lắp đặt hoàn thiện</td>
-                                <td class="px-6 py-4 text-right">3.000.000</td>
-                            </tr>
-                            <tr class="bg-emerald-50 text-emerald-900">
-                                <td class="px-6 py-4 font-bold text-lg" colspan="2">TỔNG CỘNG</td>
-                                <td class="px-6 py-4 font-bold text-lg text-right">~ 26.000.000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-                    <h4 class="font-bold text-gray-900 mb-2">Phương án A (Ưu tiên)</h4>
-                    <p class="text-sm text-gray-600">Trích từ <strong>Quỹ kết dư vận hành</strong> hoặc Quỹ bảo trì (Hạng mục PCCC). Đây là tài sản chung phục vụ an toàn cho toàn tòa nhà.</p>
-                </div>
-                <div class="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
-                    <h4 class="font-bold text-gray-900 mb-2">Phương án B (Xã hội hóa)</h4>
-                    <p class="text-sm text-gray-600">BQT chi trả hạ tầng (30%). Cư dân sử dụng xe điện đóng góp thiết bị (70%) theo nguyên tắc "Người sử dụng trả tiền".</p>
-                </div>
-            </div>
+            <p class="text-center mt-4 text-sm text-gray-500">Chi phí có thể được chia sẻ giữa Quỹ bảo trì và Xã hội hóa cư dân.</p>
         </div>
     </section>
 
-    <!-- Legal & Procedure -->
-    <section id="legal" class="py-20 bg-white">
+    <!-- Legal & Procedure Section (Restored) -->
+    <section id="legal" class="py-20 bg-gray-50 border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Quy Trình Triển Khai Pháp Lý</h2>
-                <p class="text-gray-600">Đảm bảo đúng quy định của Nhà nước và sự đồng thuận của cư dân.</p>
+                <p class="text-gray-600">Lộ trình 3 bước đảm bảo đúng quy định và an toàn pháp lý cho BQT.</p>
             </div>
 
             <div class="relative pl-8 sm:pl-0">
@@ -240,7 +216,7 @@
                     <div class="sm:w-1/2 sm:pr-8 sm:text-right">
                         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Bước 1: Lấy ý kiến cư dân</h3>
-                            <p class="text-gray-600 text-sm">Thông qua Hội nghị nhà chung cư hoặc phiếu lấy ý kiến. Mục tiêu: >50% đồng thuận.</p>
+                            <p class="text-gray-600 text-sm">Thông qua Hội nghị nhà chung cư hoặc phiếu lấy ý kiến. Mục tiêu: >50% đồng thuận về việc dùng sân chung làm trạm sạc.</p>
                         </div>
                     </div>
                     <div class="absolute left-[-16px] sm:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-600 text-white font-bold z-10 border-4 border-white">1</div>
@@ -254,7 +230,7 @@
                     <div class="sm:w-1/2 sm:pl-8">
                         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Bước 2: Thông báo UBND Phường</h3>
-                            <p class="text-gray-600 text-sm">Gửi văn bản thông báo lắp đặt "Hạng mục phụ trợ PCCC". Cam kết kết cấu lắp ghép, không kiên cố.</p>
+                            <p class="text-gray-600 text-sm">Gửi văn bản thông báo lắp đặt "Hạng mục phụ trợ PCCC". Cam kết kết cấu lắp ghép, không kiên cố (không cần xin GPXD).</p>
                         </div>
                     </div>
                 </div>
@@ -264,7 +240,7 @@
                     <div class="sm:w-1/2 sm:pr-8 sm:text-right">
                         <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
                             <h3 class="font-bold text-lg text-gray-900 mb-2">Bước 3: Cập nhật Hồ sơ PCCC</h3>
-                            <p class="text-gray-600 text-sm">Báo cáo phương án PCCC cơ sở mới với công an khu vực.</p>
+                            <p class="text-gray-600 text-sm">Báo cáo phương án PCCC cơ sở mới (di dời nguồn nhiệt ra khỏi hầm) với công an khu vực.</p>
                         </div>
                     </div>
                     <div class="absolute left-[-16px] sm:left-1/2 -translate-x-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-emerald-600 text-white font-bold z-10 border-4 border-white">3</div>
@@ -274,35 +250,47 @@
         </div>
     </section>
 
-    <!-- Rules Section -->
-    <section class="py-20 bg-gray-50">
+    <!-- Rules & Liability Section (Restored) -->
+    <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-                <div class="bg-gray-800 px-8 py-6">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+                <div class="bg-gray-800 px-8 py-6 flex justify-between items-center">
                     <h3 class="text-2xl font-bold text-white flex items-center">
                         <i class="fa-solid fa-scale-balanced mr-3 text-emerald-400"></i> Quy Định & Miễn Trừ Trách Nhiệm
                     </h3>
                 </div>
-                <div class="p-8">
+                <div class="p-8 bg-gray-50">
                     <div class="space-y-6">
                         <div class="flex items-start">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1 mr-4"></i>
-                            <div>
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-circle-check text-emerald-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
                                 <h4 class="font-bold text-gray-900">Trách nhiệm người dùng</h4>
-                                <p class="text-gray-600 text-sm">Chỉ cư dân đã đăng ký mới được sử dụng. Di dời xe trong vòng 30 phút sau khi sạc đầy.</p>
+                                <p class="text-gray-600 text-sm mt-1">Chỉ cư dân đã đăng ký mới được sử dụng. Phải di dời xe trong vòng 30 phút sau khi sạc đầy để nhường chỗ.</p>
                             </div>
                         </div>
+                        
                         <div class="flex items-start">
-                            <i class="fa-solid fa-ban text-red-600 mt-1 mr-4"></i>
-                            <div>
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fa-solid fa-ban text-red-600 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
                                 <h4 class="font-bold text-gray-900">Nghiêm cấm tuyệt đối</h4>
-                                <p class="text-gray-600 text-sm">Không sử dụng pin "độ chế", bộ sạc không rõ nguồn gốc. Không để vật dễ cháy lên xe khi đang sạc.</p>
+                                <p class="text-gray-600 text-sm mt-1">Không sử dụng pin "độ chế", bộ sạc không rõ nguồn gốc. Không được mang xe lên căn hộ sạc sau khi trạm sạc đi vào hoạt động.</p>
                             </div>
                         </div>
-                        <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                            <h4 class="font-bold text-yellow-800 text-sm mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Điều khoản miễn trừ</h4>
-                            <p class="text-yellow-800 text-sm italic">
-                                "Ban Quản Trị không chịu trách nhiệm bồi thường nếu nguyên nhân cháy nổ do lỗi kỹ thuật của phương tiện (pin độ, chập điện xe) hoặc do chủ xe vi phạm quy định an toàn."
+
+                        <!-- Liability Waiver Box -->
+                        <div class="p-5 bg-yellow-50 rounded-lg border border-yellow-200 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 -mt-2 -mr-2 opacity-10">
+                                <i class="fa-solid fa-file-contract text-6xl text-yellow-800"></i>
+                            </div>
+                            <h4 class="font-bold text-yellow-800 text-base mb-2 flex items-center">
+                                <i class="fa-solid fa-triangle-exclamation mr-2"></i> Điều khoản miễn trừ (Bảo vệ BQT)
+                            </h4>
+                            <p class="text-yellow-900 text-sm italic leading-relaxed">
+                                "Ban Quản Trị và Ban Quản Lý <strong>không chịu trách nhiệm bồi thường thiệt hại</strong> về phương tiện nếu nguyên nhân cháy nổ được cơ quan chức năng xác định do lỗi kỹ thuật của phương tiện (pin độ, chập điện nội bộ xe) hoặc do chủ xe vi phạm quy định an toàn. Chủ xe gây sự cố phải chịu trách nhiệm bồi thường cho các bên liên quan."
                             </p>
                         </div>
                     </div>
@@ -312,34 +300,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-4">Chung tay vì một môi trường sống An toàn</h2>
-            <p class="text-gray-400 mb-8">Đề xuất bởi Cư dân tâm huyết của tòa nhà</p>
-            <div class="flex justify-center space-x-4">
-                <button onclick="document.getElementById('voteModal').classList.remove('hidden')" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-bold transition">
-                    Tôi đồng ý với đề xuất này
-                </button>
-            </div>
-            <p class="mt-8 text-xs text-gray-500">© 2024 EV Station Safe Proposal. Designed for Community.</p>
-        </div>
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p class="mb-4 font-medium">Vì sự an toàn của chính gia đình bạn, hãy ủng hộ đề xuất này.</p>
+        <button onclick="document.getElementById('voteModal').classList.remove('hidden')" class="bg-emerald-600 hover:bg-emerald-700 px-6 py-2 rounded-full font-bold transition">
+            Tôi đồng ý kiến nghị BQT
+        </button>
     </footer>
 
     <!-- Modal Vote -->
-    <div id="voteModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl max-w-md w-full p-8 relative animate-fade-in-up">
+    <div id="voteModal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8 relative">
             <button onclick="document.getElementById('voteModal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             <div class="text-center">
                 <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 text-emerald-600 text-3xl">
-                    <i class="fa-solid fa-heart"></i>
+                    <i class="fa-solid fa-check"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-2">Cảm ơn sự ủng hộ của bạn!</h3>
-                <p class="text-gray-600 mb-6">Sự đồng thuận của bạn là động lực lớn nhất để chúng ta hiện thực hóa dự án này.</p>
-                <form onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã gửi ý kiến!'); document.getElementById('voteModal').classList.add('hidden');" class="space-y-4">
-                    <input type="text" placeholder="Tên căn hộ của bạn (VD: A12.05)" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none" required>
-                    <textarea placeholder="Ý kiến đóng góp thêm (nếu có)" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none" rows="3"></textarea>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Đồng thuận xây trạm sạc</h3>
+                <p class="text-gray-600 text-sm mb-6">Bạn đồng ý rằng việc xây dựng trạm sạc sân chung là cấp thiết để chấm dứt tình trạng mang xe lên nhà?</p>
+                <form onsubmit="event.preventDefault(); alert('Cảm ơn tiếng nói của bạn!'); document.getElementById('voteModal').classList.add('hidden');" class="space-y-4">
+                    <input type="text" placeholder="Tên / Căn hộ" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-emerald-500" required>
                     <button type="submit" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition">Gửi xác nhận</button>
                 </form>
             </div>
